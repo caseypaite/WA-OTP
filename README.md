@@ -81,7 +81,8 @@ curl -X POST http://localhost:3050/send-otp \
   }'
 ```
 
-### 6. Send Newsletter/Channel Message
+### 6. Send Newsletter/Channel Message (⚠️ CURRENTLY NOT WORKING)
+> **Note:** Due to recent WhatsApp Web internal changes, sending messages to newsletters/channels via `whatsapp-web.js` may return an `undefined (reading 'add')` error.
 ```bash
 curl -X POST http://localhost:3050/send-newsletter \
   -H "x-api-key: YOUR_API_KEY" \
@@ -92,20 +93,29 @@ curl -X POST http://localhost:3050/send-newsletter \
   }'
 ```
 
-### 7. List Admin Newsletters
+### 7. List Admin Newsletters (⚠️ CURRENTLY NOT WORKING)
+> **Note:** Newsletter/Channel discovery is currently inconsistent due to library compatibility issues.
 ```bash
 curl -X GET http://localhost:3050/admin-newsletters \
   -H "x-api-key: YOUR_API_KEY"
 ```
 
-### 8. Reset Session
-Use this if you encounter persistent "reading property add" errors. It will log you out and require a fresh QR scan.
-```bash
-curl -X POST http://localhost:3050/reset-session \
-  -H "x-api-key: YOUR_API_KEY"
-```
+### 6. Send Newsletter/Channel Message (⚠️ CURRENTLY NOT WORKING)
+- **URL:** `/send-newsletter`
+- **Method:** `POST`
+- **Body:**
+  ```json
+  {
+    "newsletterId": "number@newsletter",
+    "content": "Hello channel subscribers!"
+  }
+  ```
 
-### 9. Generic Call (Get Contact)
+### 7. List Admin Newsletters (⚠️ CURRENTLY NOT WORKING)
+- **URL:** `/admin-newsletters`
+- **Method:** `GET`
+
+### 8. Reset Session
 ```bash
 curl -X POST http://localhost:3050/call \
   -H "x-api-key: YOUR_API_KEY" \

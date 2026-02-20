@@ -206,7 +206,7 @@ app.post('/send-otp', checkReady, async (req, res) => {
     }
 });
 
-// Specialized Endpoint: Send Newsletter/Channel Message
+// Specialized Endpoint: Send Newsletter/Channel Message (⚠️ CURRENTLY NOT WORKING)
 app.post('/send-newsletter', checkReady, async (req, res) => {
     const { newsletterId, content, options } = req.body;
     if (!newsletterId || !content) {
@@ -243,7 +243,7 @@ app.post('/reset-session', async (req, res) => {
     }
 });
 
-// Specialized Endpoint: List Admin Newsletters
+// Specialized Endpoint: List Admin Newsletters (⚠️ CURRENTLY NOT WORKING)
 app.get('/admin-newsletters', checkReady, async (req, res) => {
     try {
         const chats = await client.getChats();

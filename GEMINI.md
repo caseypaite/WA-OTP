@@ -38,9 +38,9 @@
 - **Status:** `GET /status` - Check connectivity.
 - **OTP:** `POST /send-otp` - Send formatted verification codes.
 - **Media:** `POST /send-media` - Send files via URL.
-- **Newsletter:** 
-  - `POST /send-newsletter` - Send to channels (automatically handles `@newsletter` suffix and `sendSeen: false`).
-  - `GET /admin-newsletters` - List channels where the client is an ADMIN, OWNER, or CREATOR.
+- **Newsletter (⚠️ CURRENTLY NOT WORKING):** 
+  - `POST /send-newsletter` - Send to channels (Currently returns `reading property add` error).
+  - `GET /admin-newsletters` - List channels where the client is an ADMIN, OWNER, or CREATOR (Currently inconsistent).
 - **Webhook:** `POST /webhook` - Register a callback URL.
 - **Generic:** `POST /call` - Execute any `whatsapp-web.js` method dynamically.
 
